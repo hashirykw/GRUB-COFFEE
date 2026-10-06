@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ignite Academy | Cambridge O Level, IGCSE and A Level classes in DHA Karachi and online</title>
+<meta name="description" content="Ignite Academy teaches Cambridge O Level, IGCSE and A Level Economics, Physics, Chemistry, Maths, Accounting and Computer Science in small batches at Ittehad Commercial, DHA Phase 6, Karachi, and live online.">
+<!-- DEMO BUILD: remove the next line before launch so Google can index the site -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f7f9fc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ignite Academy | Cambridge O and A Level classes, DHA Karachi">
+<meta property="og:description" content="Concept first, mark scheme next. Small-batch Cambridge classes on campus in DHA Phase 6 or live online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%231c2a4f'/%3E%3Cpath d='M8 17l5 5L24 9' fill='none' stroke='%23e0413f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Ignite Academy",
+  "description": "Cambridge O Level, IGCSE and A Level tuition in Economics, Physics, Chemistry, Mathematics, Accounting and Computer Science.",
+  "telephone": "+92 320 1719494",
+  "email": "info@igniteacademy.pk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ittehad Commercial, Phase 6, DHA",
+    "addressLocality": "Karachi",
+    "addressRegion": "Sindh",
+    "addressCountry": "PK"
+  },
+  "founder": { "@type": "Person", "name": "Muhammad Mubashir" }
+}
+</script>
+<style>
+/* Ignite Academy demo, concept by Nexlyr Solutions.
+   Idea: a Cambridge answer booklet. Ruled paper, an examiner's margin, red-pen ticks.
+   Pre-emit critique: philosophy 5, hierarchy 4, execution 4, specificity 5, restraint 4, variety 5. */
+
+:root{
+  /* colour tokens */
+  --paper:      oklch(98.4% 0.005 250);
+  --paper-2:    oklch(95.6% 0.012 250);
+  --sheet:      oklch(100% 0 0);
+  --ink:        oklch(29% 0.075 265);
+  --ink-soft:   oklch(44% 0.035 262);
+  --ink-faint:  oklch(52% 0.03 258);
+  --rule:       oklch(88.5% 0.03 245);
+  --rule-soft:  oklch(92.5% 0.018 245);
+  --red:        oklch(57% 0.205 25);
+  --red-deep:   oklch(49% 0.19 25);
+  --red-wash:   oklch(95.5% 0.025 25);
+  --white:      oklch(100% 0 0);
+  --shade:      oklch(29% 0.075 265 / 0.08);
+
+  /* type tokens */
+  --font-display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", Verdana, sans-serif;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.5rem, 1.1rem + 1.4vw, 2rem);
+  --text-2xl: clamp(2rem, 1.3rem + 2.6vw, 3rem);
+  --text-display: clamp(2.3rem, 0.9rem + 4vw, 4.25rem);
+
+  /* spacing (4pt) */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+  --space-5: 1.5rem; --space-6: 2rem; --space-7: 3rem; --space-8: 4rem; --space-9: 6rem;
+
+  --radius: 3px;
+  --line: 2.25rem;               /* ruled-line height on the answer sheet */
+  --ease-out: cubic-bezier(.2,.7,.2,1);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --wrap: 72rem;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ overflow-x:clip; }
+html{ scroll-behavior:smooth; scroll-padding-top:5rem; -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--font-body); font-size:var(--text-md); line-height:1.6;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; }
+h1,h2,h3,h4{ font-family:var(--font-display); font-style:normal; margin:0; line-height:1.05; letter-spacing:-0.01em; overflow-wrap:anywhere; min-width:0; }
+p{ margin:0; }
+.wrap{ width:min(100% - 2.5rem, var(--wrap)); margin-inline:auto; }
+.visually-hidden{ position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+:focus-visible{ outline:3px solid var(--red); outline-offset:3px; }
+.skip{ position:absolute; left:1rem; top:-4rem; background:var(--ink); color:var(--white); padding:var(--space-2) var(--space-4); border-radius:var(--radius); z-index:100; text-decoration:none; }
+.skip:focus{ top:1rem; }
+
+/* ---------- buttons (squared, never pills) ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:var(--space-2);
+  font-family:var(--font-display); font-weight:700; font-size:var(--text-sm); font-stretch:105%;
+  letter-spacing:0.01em; white-space:nowrap; text-decoration:none; cursor:pointer;
+  min-height:3rem; padding:0 var(--space-5); border-radius:var(--radius);
+  border:2px solid transparent; transition:background-color .18s var(--ease-out), color .18s var(--ease-out), border-color .18s var(--ease-out), transform .12s var(--ease-out);
+}
+.btn:active{ transform:translateY(1px); }
+.btn-red{ background:var(--red); color:var(--white); }
+.btn-red:hover{ background:var(--red-deep); }
+.btn-line{ background:transparent; color:var(--ink); border-color:var(--ink); }
+.btn-line:hover{ background:var(--ink); color:var(--white); }
+.btn svg{ width:1.15em; height:1.15em; flex:none; }
+.btn[disabled]{ opacity:.5; cursor:not-allowed; }
+
+/* ---------- header ---------- */
+.top{
+  position:sticky; top:0; z-index:50; background:color-mix(in oklch, var(--paper) 92%, transparent);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:1px solid var(--rule);
+}
+.top-in{ display:flex; align-items:center; gap:var(--space-5); min-height:4.25rem; }
+.mark{ display:flex; align-items:center; gap:var(--space-2); text-decoration:none; color:var(--ink); }
+.mark svg{ width:2rem; height:2rem; flex:none; }
+.mark b{ font-family:var(--font-display); font-weight:800; font-stretch:115%; font-size:1.2rem; letter-spacing:-0.01em; }
+.mark span{ font-family:var(--font-display); font-weight:500; font-stretch:100%; font-size:1.2rem; color:var(--ink-soft); }
+.menu{ display:flex; gap:var(--space-5); margin-left:auto; }
+.menu a{ text-decoration:none; font-size:var(--text-sm); color:var(--ink-soft); white-space:nowrap; padding:var(--space-2) 0; border-bottom:2px solid transparent; transition:color .15s, border-color .15s; }
+.menu a:hover{ color:var(--ink); border-bottom-color:var(--red); }
+.top .btn{ min-height:2.6rem; padding:0 var(--space-4); }
+.menu-toggle{ display:none; margin-left:auto; background:none; border:1px solid var(--rule); color:var(--ink); border-radius:var(--radius); font:700 var(--text-sm)/1 var(--font-display); padding:var(--space-3) var(--space-4); cursor:pointer; }
+.menu-toggle:hover{ border-color:var(--ink); }
+
+/* ---------- hero ---------- */
+.hero{ position:relative; padding:var(--space-8) 0 var(--space-9); border-bottom:1px solid var(--rule); }
+.hero-in{ display:grid; grid-template-columns:minmax(0,1.12fr) minmax(0,0.88fr); gap:var(--space-8); align-items:center; }
+.where{ font-size:var(--text-sm); color:var(--ink-soft); margin-bottom:var(--space-5); max-width:34rem; }
+.where strong{ color:var(--ink); }
+.hero h1{ font-size:var(--text-display); font-weight:850; font-stretch:86%; letter-spacing:-0.015em; line-height:0.97; }
+.hero h1 .l2{ display:block; }
+.lede{ margin-top:var(--space-5); font-size:var(--text-lg); line-height:1.55; color:var(--ink-soft); max-width:35rem; }
+.cta-row{ display:flex; flex-wrap:wrap; gap:var(--space-3); margin-top:var(--space-6); }
+.note{ margin-top:var(--space-4); font-size:var(--text-sm); color:var(--ink-faint); }
+
+/* the answer sheet: the one signature element */
+.sheet{
+  position:relative; margin:0; background:var(--sheet); border:1px solid var(--rule);
+  box-shadow:0 1px 0 var(--rule), 0 18px 40px -24px var(--shade);
+  border-radius:var(--radius); padding:0; overflow:hidden;
+}
+.sheet-head{
+  display:grid; grid-template-columns:minmax(0,1fr) 5.5rem; border-bottom:1px solid var(--rule);
+  font-size:var(--text-xs); color:var(--ink-faint);
+}
+.sheet-head span{ padding:var(--space-2) var(--space-4); }
+.sheet-head span + span{ border-left:1px solid var(--rule); text-align:center; line-height:1.2; padding:var(--space-2); }
+.sheet-body{ display:grid; grid-template-columns:minmax(0,1fr) 5.5rem; }
+.q, .ans{ grid-column:1 / -1; display:grid; grid-template-columns:2.75rem minmax(0,1fr) 5.5rem; border-bottom:1px solid var(--rule-soft); }
+.q{ min-height:calc(var(--line) * 1.6); }
+.ans{ min-height:var(--line); }
+.q .n, .ans::before{ border-right:1.5px solid var(--red); }
+.ans::before{ content:""; grid-column:1; }
+.q .n{ display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-weight:800; font-size:1.15rem; color:var(--ink); }
+.q p{ align-self:center; font-weight:700; line-height:1.3; padding:var(--space-3); font-size:var(--text-md); }
+.q .marks{ font-family:var(--font-display); font-weight:700; color:var(--ink-soft); border-left:1px solid var(--rule); display:flex; align-items:center; justify-content:center; }
+.ans p{ grid-column:2; align-self:end; padding:var(--space-2) var(--space-3) 0.35rem; color:oklch(38% 0.11 262); font-size:var(--text-sm); line-height:1.3; }
+.ans .tick{ grid-column:3; border-left:1px solid var(--rule); display:flex; align-items:center; justify-content:center; }
+.tick svg{ width:1.7rem; height:1.7rem; overflow:visible; }
+.tick path{ fill:none; stroke:var(--red); stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:40; stroke-dashoffset:40; animation:draw .42s var(--ease-out) forwards; animation-delay:calc(0.55s + var(--i) * 0.38s); }
+.total{ grid-column:1 / -1; display:grid; grid-template-columns:minmax(0,1fr) 5.5rem; min-height:calc(var(--line) * 2); border-top:1px solid var(--rule); }
+.total p{ align-self:center; padding:0 var(--space-4); font-size:var(--text-xs); color:var(--ink-faint); text-align:right; }
+.total div{ border-left:1px solid var(--rule); display:flex; align-items:center; justify-content:center; position:relative; }
+.total svg{ position:absolute; width:4.4rem; height:3.6rem; overflow:visible; }
+.total svg ellipse{ fill:none; stroke:var(--red); stroke-width:2.4; stroke-dasharray:200; stroke-dashoffset:200; animation:draw .7s var(--ease-in-out) forwards; animation-delay:2.25s; }
+.total b{ font-family:var(--font-display); font-weight:800; font-size:1.3rem; color:var(--red); opacity:0; animation:fade .3s linear forwards; animation-delay:2.4s; }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+@keyframes fade{ to{ opacity:1; } }
+
+/* ---------- sections ---------- */
+section{ padding:var(--space-9) 0; }
+.sec-head{ display:grid; gap:var(--space-3); max-width:40rem; margin-bottom:var(--space-7); }
+.sec-head h2{ font-size:var(--text-2xl); font-weight:800; font-stretch:110%; letter-spacing:-0.02em; }
+.sec-head p{ color:var(--ink-soft); font-size:var(--text-md); }
+
+/* lectures */
+.lectures{ background:var(--ink); color:var(--white); }
+.lectures .sec-head p{ color:oklch(84% 0.03 255); }
+.reel{ display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:var(--space-6); align-items:start; }
+.reel figure{ margin:0; }
+.reel figcaption{ margin-top:var(--space-3); font-size:var(--text-sm); color:oklch(84% 0.03 255); }
+.reel figcaption strong{ color:var(--white); font-family:var(--font-display); font-weight:700; font-size:var(--text-md); display:block; margin-bottom:2px; }
+
+/* video facade */
+.yt{
+  position:relative; display:block; width:100%; aspect-ratio:16/9; border:0; padding:0; cursor:pointer;
+  background:oklch(22% 0.05 265) center/cover no-repeat; border-radius:var(--radius); overflow:hidden; color:var(--white);
+}
+.yt::after{ content:""; position:absolute; inset:0; background:linear-gradient(to top, oklch(15% 0.04 265 / .55), transparent 55%); transition:opacity .2s; }
+.yt .play{
+  position:absolute; left:var(--space-4); bottom:var(--space-4); z-index:1; display:flex; align-items:center; gap:var(--space-2);
+  background:var(--red); color:var(--white); font:700 var(--text-sm)/1 var(--font-display); padding:var(--space-3) var(--space-4); border-radius:var(--radius);
+  transition:background-color .18s var(--ease-out);
+}
+.yt .play svg{ width:.9rem; height:.9rem; }
+.yt:hover .play{ background:var(--red-deep); }
+.yt:hover::after{ opacity:.7; }
+.yt iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.yt.is-on::after,.yt.is-on .play{ display:none; }
+
+/* subjects index */
+.index{ width:100%; border-collapse:collapse; font-size:var(--text-sm); }
+.index th{ text-align:left; font-weight:700; color:var(--ink-faint); font-size:var(--text-xs); padding:var(--space-3) var(--space-3); border-bottom:2px solid var(--ink); }
+.index td{ padding:var(--space-4) var(--space-3); border-bottom:1px solid var(--rule); vertical-align:top; }
+.index tbody tr{ transition:background-color .15s; }
+.index tbody tr:hover{ background:var(--paper-2); }
+.index .subj{ font-family:var(--font-display); font-weight:800; font-stretch:108%; font-size:var(--text-lg); color:var(--ink); white-space:nowrap; }
+.code{ display:inline-block; font-family:var(--font-display); font-weight:700; font-variant-numeric:tabular-nums; border:1px solid var(--ink); border-radius:2px; padding:1px 7px; color:var(--ink); }
+.none{ color:var(--rule); font-weight:700; }
+.mode{ color:var(--ink-soft); }
+.who a{ color:var(--ink); text-decoration-color:var(--red); text-underline-offset:3px; }
+.index-note{ margin-top:var(--space-4); font-size:var(--text-xs); color:var(--ink-faint); max-width:46rem; }
+
+/* teachers */
+.teachers{ background:var(--paper-2); border-block:1px solid var(--rule); }
+.lead-t{
+  display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) minmax(0,20rem); gap:var(--space-6);
+  padding:var(--space-6) 0; border-top:2px solid var(--ink);
+}
+.lead-t + .lead-t{ border-top-width:1px; border-top-color:var(--rule); }
+.photo{
+  position:relative; aspect-ratio:4/5; background:var(--white); border:1px solid var(--rule); border-radius:var(--radius); overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+}
+.photo img{ width:100%; height:100%; object-fit:cover; object-position:top center; }
+.photo .mono{ position:absolute; inset:0; display:none; align-items:center; justify-content:center; font:800 3rem/1 var(--font-display); color:var(--ink); background:var(--white); }
+.photo.no-img .mono{ display:flex; }
+.photo.no-img img{ display:none; }
+.t-role{ font-size:var(--text-sm); color:var(--red-deep); font-weight:700; }
+.lead-t h3{ font-size:var(--text-xl); font-weight:800; font-stretch:108%; margin:var(--space-1) 0 var(--space-3); }
+.facts{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:var(--space-1) var(--space-4); margin:0 0 var(--space-4); font-size:var(--text-sm); }
+.facts dt{ color:var(--ink-faint); }
+.facts dd{ margin:0; color:var(--ink); }
+.bio{ color:var(--ink-soft); max-width:36rem; }
+.t-links{ margin-top:var(--space-4); display:flex; flex-wrap:wrap; gap:var(--space-4); font-size:var(--text-sm); }
+.t-links a{ color:var(--ink); text-underline-offset:3px; text-decoration-color:var(--red); }
+.vids{ display:grid; gap:var(--space-3); align-content:start; }
+.vids .yt .play{ font-size:var(--text-xs); padding:var(--space-2) var(--space-3); left:var(--space-3); bottom:var(--space-3); }
+.vids.three{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+.vids.three .yt:first-child{ grid-column:1 / -1; }
+.vids small{ font-size:var(--text-xs); color:var(--ink-faint); }
+.mini-row{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:var(--space-6); padding-top:var(--space-6); border-top:1px solid var(--rule); }
+.mini .photo{ aspect-ratio:1/1; width:7.5rem; margin-bottom:var(--space-4); }
+.mini h3{ font-size:var(--text-lg); font-weight:800; font-stretch:106%; margin:var(--space-1) 0 var(--space-3); }
+.mini .yt{ margin-top:var(--space-4); }
+.on-request{ margin-top:var(--space-4); font-size:var(--text-sm); color:var(--ink-faint); border-left:3px solid var(--rule); padding-left:var(--space-3); }
+
+/* modes */
+.modes{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:0; border:1px solid var(--rule); background:var(--sheet); border-radius:var(--radius); }
+.mode-col{ padding:var(--space-6); }
+.mode-col + .mode-col{ border-left:1px solid var(--rule); }
+.mode-col h3{ font-size:var(--text-xl); font-weight:800; font-stretch:110%; }
+.mode-col .sub{ color:var(--ink-soft); margin:var(--space-2) 0 var(--space-5); font-size:var(--text-sm); }
+.mode-col ul{ list-style:none; margin:0; padding:0; }
+.mode-col li{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:var(--space-4); padding:var(--space-3) 0; border-top:1px solid var(--rule-soft); font-size:var(--text-sm); }
+.mode-col li span{ color:var(--ink-soft); text-align:right; }
+.mode-col li b{ font-weight:700; }
+.ask{ margin-top:var(--space-4); font-size:var(--text-xs); color:var(--ink-faint); }
+.also{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:var(--space-6); margin-top:var(--space-7); }
+.also h4{ font-size:var(--text-md); font-weight:800; font-stretch:105%; margin-bottom:var(--space-2); }
+.also p{ font-size:var(--text-sm); color:var(--ink-soft); }
+
+/* faq */
+.faq{ border-top:2px solid var(--ink); max-width:48rem; }
+.faq details{ border-bottom:1px solid var(--rule); }
+.faq summary{ list-style:none; cursor:pointer; display:flex; justify-content:space-between; gap:var(--space-4); align-items:center; padding:var(--space-5) 0; font-family:var(--font-display); font-weight:700; font-size:var(--text-lg); font-stretch:104%; }
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:"+"; font-size:1.6rem; line-height:1; color:var(--red); transition:transform .2s var(--ease-out); flex:none; }
+.faq details[open] summary::after{ transform:rotate(45deg); }
+.faq summary:hover{ color:var(--ink-soft); }
+.faq details p{ padding:0 0 var(--space-5); color:var(--ink-soft); max-width:42rem; }
+.faq-grid{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,20rem); gap:var(--space-8); align-items:start; }
+.faq-side{ border-left:3px solid var(--red); padding-left:var(--space-5); }
+.faq-side p{ color:var(--ink-soft); font-size:var(--text-sm); margin-bottom:var(--space-4); }
+
+/* enquiry */
+.enquire{ background:var(--ink); color:var(--white); }
+.enquire .sec-head p{ color:oklch(84% 0.03 255); }
+.enq-grid{ display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr); gap:var(--space-8); align-items:start; }
+.form{ background:var(--sheet); color:var(--ink); border-radius:var(--radius); padding:var(--space-6); display:grid; gap:var(--space-5); }
+.field{ display:grid; gap:var(--space-2); }
+.field > label, .field legend{ font-weight:700; font-size:var(--text-sm); padding:0; }
+fieldset{ border:0; margin:0; padding:0; min-width:0; }
+input[type=text], select, textarea{
+  width:100%; font:inherit; font-size:var(--text-md); color:var(--ink); background:var(--paper);
+  border:1px solid var(--rule); border-bottom:2px solid var(--ink-faint); border-radius:var(--radius) var(--radius) 0 0;
+  padding:var(--space-3) var(--space-3); min-height:3rem; transition:border-color .15s, background-color .15s;
+}
+textarea{ min-height:5.5rem; resize:vertical; }
+input[type=text]:hover, select:hover, textarea:hover{ border-bottom-color:var(--ink); }
+input[type=text]:focus-visible, select:focus-visible, textarea:focus-visible{ outline:none; border-bottom-color:var(--red); background:var(--white); box-shadow:0 2px 0 var(--red); }
+select{ appearance:none; -webkit-appearance:none; background-image:linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%); background-position:calc(100% - 1.15rem) 55%, calc(100% - 0.8rem) 55%; background-size:0.35rem 0.35rem; background-repeat:no-repeat; padding-right:2.5rem; }
+.seg{ display:flex; flex-wrap:wrap; gap:0; border:1px solid var(--rule); border-radius:var(--radius); overflow:hidden; width:max-content; max-width:100%; }
+.seg label{ position:relative; }
+.seg input{ position:absolute; opacity:0; inset:0; width:100%; height:100%; margin:0; cursor:pointer; }
+.seg span{ display:block; padding:var(--space-3) var(--space-4); font-size:var(--text-sm); font-weight:700; white-space:nowrap; border-right:1px solid var(--rule); background:var(--paper); transition:background-color .15s, color .15s; }
+.seg label:last-child span{ border-right:0; }
+.seg input:hover + span{ background:var(--paper-2); }
+.seg input:checked + span{ background:var(--ink); color:var(--white); }
+.seg input:focus-visible + span{ outline:3px solid var(--red); outline-offset:-3px; }
+.err{ color:var(--red-deep); font-size:var(--text-xs); min-height:1em; }
+.form .btn{ justify-self:start; }
+.form-note{ font-size:var(--text-xs); color:var(--ink-faint); }
+.contact-list{ list-style:none; margin:0; padding:0; display:grid; gap:0; border-top:1px solid oklch(100% 0 0 / .2); }
+.contact-list li{ padding:var(--space-4) 0; border-bottom:1px solid oklch(100% 0 0 / .2); display:grid; gap:2px; }
+.contact-list small{ color:oklch(78% 0.03 255); font-size:var(--text-xs); }
+.contact-list a{ color:var(--white); font-family:var(--font-display); font-weight:700; font-size:var(--text-lg); text-decoration:none; overflow-wrap:anywhere; }
+.contact-list a:hover{ text-decoration:underline; text-decoration-color:var(--red); text-underline-offset:4px; }
+.contact-list address{ font-style:normal; font-family:var(--font-display); font-weight:700; font-size:var(--text-lg); }
+
+/* footer */
+.foot{ padding:var(--space-5) 0 calc(var(--space-5) + env(safe-area-inset-bottom)); border-top:1px solid var(--rule); font-size:var(--text-xs); color:var(--ink-faint); }
+.foot-in{ display:flex; flex-wrap:wrap; gap:var(--space-3) var(--space-6); align-items:center; justify-content:space-between; }
+.foot a{ color:var(--ink-soft); }
+
+/* mobile action bar */
+.dock{ display:none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1020px){
+  .lead-t{ grid-template-columns:minmax(0,12rem) minmax(0,1fr); }
+  .lead-t .vids{ grid-column:1 / -1; grid-template-columns:repeat(auto-fit, minmax(14rem, 1fr)); }
+  .mini-row{ grid-template-columns:minmax(0,1fr); gap:var(--space-6); }
+  .mini{ display:grid; grid-template-columns:7.5rem minmax(0,1fr); gap:0 var(--space-5); align-items:start; }
+  .mini .photo{ grid-column:1; grid-row:1 / span 4; margin:0; }
+  .mini > *:not(.photo){ grid-column:2; }
+  .lead-t .vids.three{ grid-template-columns:repeat(3, minmax(0,1fr)); }
+  .lead-t .vids.three .yt:first-child{ grid-column:auto; }
+}
+@media (max-width: 900px){
+  .menu{ display:none; }
+  .menu-toggle{ display:inline-flex; }
+  .top .btn{ display:none; }
+  .menu.open{
+    display:grid; position:absolute; left:0; right:0; top:100%; background:var(--paper); border-bottom:1px solid var(--rule);
+    padding:var(--space-3) 1.25rem var(--space-5); gap:0;
+  }
+  .menu.open a{ padding:var(--space-3) 0; border-bottom:1px solid var(--rule-soft); font-size:var(--text-md); color:var(--ink); }
+  .hero{ padding:var(--space-6) 0 var(--space-8); }
+  .hero-in{ grid-template-columns:minmax(0,1fr); gap:var(--space-7); }
+  .reel{ grid-template-columns:minmax(0,1fr); }
+  .enq-grid, .faq-grid{ grid-template-columns:minmax(0,1fr); gap:var(--space-7); }
+  .also{ grid-template-columns:minmax(0,1fr); gap:var(--space-5); }
+  section{ padding:var(--space-8) 0; }
+}
+@media (max-width: 760px){
+  .modes{ grid-template-columns:minmax(0,1fr); }
+  .mode-col + .mode-col{ border-left:0; border-top:1px solid var(--rule); }
+  /* subject index becomes stacked rows */
+  .index thead{ display:none; }
+  .index, .index tbody, .index tr, .index td{ display:block; width:100%; }
+  .index tr{ padding:var(--space-4) 0; border-bottom:1px solid var(--rule); display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:var(--space-2) var(--space-3); }
+  .index tr:first-child{ border-top:2px solid var(--ink); }
+  .index td{ border:0; padding:0; }
+  .index td.subj{ grid-column:1 / -1; }
+  .index td[data-l]::before{ content:attr(data-l); display:block; font-size:var(--text-xs); color:var(--ink-faint); margin-bottom:2px; }
+  .index td.who, .index td.mode{ grid-column:1 / -1; }
+  .dock{
+    display:grid; grid-template-columns:1fr 1fr; position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--ink); padding:var(--space-2) var(--space-2) calc(var(--space-2) + env(safe-area-inset-bottom)); gap:var(--space-2);
+  }
+  .dock a{ min-height:3rem; width:100%; }
+  .dock .btn-line{ color:var(--white); border-color:oklch(100% 0 0 / .45); }
+  .dock .btn-line:hover{ background:var(--white); color:var(--ink); }
+  body{ padding-bottom:4.5rem; }
+}
+@media (max-width: 560px){
+  .wrap{ width:min(100% - 2rem, var(--wrap)); }
+  .lead-t{ grid-template-columns:minmax(0,1fr); }
+  .lead-t .photo{ width:9rem; aspect-ratio:1/1; }
+  .mini{ grid-template-columns:5.5rem minmax(0,1fr); gap:0 var(--space-4); }
+  .mini .photo{ width:5.5rem; grid-row:1 / span 2; }
+  .mini > .facts, .mini > .bio, .mini > .yt, .mini > .on-request{ grid-column:1 / -1; }
+  .mini > .facts{ margin-top:var(--space-4); }
+  .lead-t .vids.three{ grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .lead-t .vids.three .yt:first-child{ grid-column:1 / -1; }
+  .cta-row .btn{ flex:1 1 100%; }
+  .sheet-head, .sheet-body, .total{ grid-template-columns:minmax(0,1fr) 3.75rem; }
+  .q, .ans{ grid-template-columns:2.1rem minmax(0,1fr) 3.75rem; }
+  .sheet-head span:first-child{ padding-left:var(--space-3); }
+  .sheet-head, .sheet-body, .total{ grid-template-columns:minmax(0,1fr) 4.25rem; }
+  .q, .ans{ grid-template-columns:2.1rem minmax(0,1fr) 4.25rem; }
+  .sheet-head span + span{ font-size:0.66rem; padding:var(--space-2) 2px; }
+  .total svg{ width:3.4rem; }
+  .form{ padding:var(--space-5); }
+  .mode-col{ padding:var(--space-5); }
+  .seg{ width:100%; }
+  .seg label{ flex:1 1 auto; }
+  .seg span{ text-align:center; padding:var(--space-3) var(--space-2); }
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.01ms!important; animation-delay:0s!important; transition-duration:.01ms!important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="mark" href="#top" aria-label="Ignite Academy, home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="var(--ink)"/><path d="M8 17l5 5L24 9" fill="none" stroke="var(--red)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <b>Ignite</b><span>Academy</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#lectures">Lectures</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#teachers">Teachers</a>
+      <a href="#attend">On campus or online</a>
+      <a href="#enquire">Contact</a>
+    </nav>
+    <a class="btn btn-red" href="https://wa.me/923201719494?text=Hi%20Ignite%20Academy%2C%20I%27d%20like%20to%20ask%20about%20classes." target="_blank" rel="noopener">WhatsApp us</a>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" id="top" aria-labelledby="hero-h">
+  <div class="wrap hero-in">
+    <div>
+      <p class="where"><strong>Cambridge O Level, IGCSE and A Level.</strong> On campus at Ittehad Commercial, DHA Phase 6, or live online.</p>
+      <h1 id="hero-h">Concept first. <span class="l2">Mark scheme next.</span></h1>
+      <p class="lede">Small-batch classes in Economics, Physics, Chemistry, Maths, Accounting and Computer Science, taught by teachers with 2 to 30 years in the classroom.</p>
+      <div class="cta-row">
+        <a class="btn btn-red" href="https://wa.me/923201719494?text=Hi%20Ignite%20Academy%2C%20I%27d%20like%20to%20ask%20about%20classes." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c0-.1-.2-.2-.5-.3Z"/></svg>
+          Message us on WhatsApp
+        </a>
+        <a class="btn btn-line" href="#lectures">Watch a demo lecture</a>
+      </div>
+      <p class="note">Demo lectures are available for every teacher.</p>
+    </div>
+
+    <figure class="sheet" aria-label="How Ignite prepares you for the exam, written as an exam answer marked 4 out of 4">
+      <div class="sheet-head" aria-hidden="true"><span>Answer all parts of the question.</span><span>For examiner's use</span></div>
+      <div class="sheet-body">
+        <div class="q"><span class="n">1</span><p>How does Ignite prepare you for the exam?</p><span class="marks">[4]</span></div>
+        <div class="ans"><p>Concepts made clear before drill practice.</p><span class="tick" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M5 15l6 6L23 6" style="--i:0"/></svg></span></div>
+        <div class="ans"><p>Preparation driven by past papers.</p><span class="tick" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M5 15l6 6L23 6" style="--i:1"/></svg></span></div>
+        <div class="ans"><p>Regular tests and progress reports.</p><span class="tick" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M5 15l6 6L23 6" style="--i:2"/></svg></span></div>
+        <div class="ans"><p>Doubts cleared outside class hours.</p><span class="tick" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M5 15l6 6L23 6" style="--i:3"/></svg></span></div>
+        <div class="ans" aria-hidden="true"><p>&nbsp;</p><span class="tick"></span></div>
+        <div class="total"><p>Total</p><div><svg viewBox="0 0 70 56" aria-hidden="true"><ellipse cx="35" cy="28" rx="30" ry="22"/></svg><b>4/4</b></div></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- LECTURES -->
+<section class="lectures" id="lectures" aria-labelledby="lec-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="lec-h">Sit in on a class first</h2>
+      <p>Two real lectures to start with. Every teacher has demo lectures; the rest are with each teacher below, or on request.</p>
+    </div>
+    <div class="reel">
+      <figure>
+        <button class="yt" type="button" data-id="BQLyzVEijcY" aria-label="Play: Economics Paper 1 question solved by Sir Mubashir">
+          <span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path fill="currentColor" d="M0 0l10 6-10 6z"/></svg>Play lecture</span>
+        </button>
+        <figcaption><strong>An Economics Paper 1 question, solved</strong>Muhammad Mubashir, founder and Economics teacher</figcaption>
+      </figure>
+      <figure>
+        <button class="yt" type="button" data-id="KdJu2nwh6EM" aria-label="Play: sample class by Sir Haroon">
+          <span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path fill="currentColor" d="M0 0l10 6-10 6z"/></svg>Play lecture</span>
+        </button>
+        <figcaption><strong>A sample class</strong>Sir Haroon, Physics, Maths and Chemistry, 30 years teaching</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+<section id="subjects" aria-labelledby="sub-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="sub-h">Six subjects, by syllabus</h2>
+      <p>Find your subject and level, see the Cambridge syllabus code, and who teaches it.</p>
+    </div>
+    <table class="index">
+      <caption class="visually-hidden">Subjects, levels, syllabus codes, teachers and class mode</caption>
+      <thead>
+        <tr><th scope="col">Subject</th><th scope="col">O Level</th><th scope="col">IGCSE</th><th scope="col">A Level</th><th scope="col">Taught by</th><th scope="col">Mode</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="subj">Economics</td>
+          <td data-l="O Level"><span class="code">2281</span></td>
+          <td data-l="IGCSE"><span class="none" aria-label="Not offered">&mdash;</span></td>
+          <td data-l="A Level"><span class="code">9708</span></td>
+          <td class="who" data-l="Taught by"><a href="#t-mubashir">Muhammad Mubashir</a></td>
+          <td class="mode" data-l="Mode">Ask on WhatsApp</td>
+        </tr>
+        <tr>
+          <td class="subj">Physics</td>
+          <td data-l="O Level"><span class="code">5054</span></td>
+          <td data-l="IGCSE"><span class="code">0625</span></td>
+          <td data-l="A Level"><span class="none" aria-label="Not offered">&mdash;</span></td>
+          <td class="who" data-l="Taught by"><a href="#t-haroon">Sir Haroon</a></td>
+          <td class="mode" data-l="Mode">On campus</td>
+        </tr>
+        <tr>
+          <td class="subj">Chemistry</td>
+          <td data-l="O Level"><span class="code">5070</span></td>
+          <td data-l="IGCSE"><span class="code">0620</span></td>
+          <td data-l="A Level"><span class="none" aria-label="Not offered">&mdash;</span></td>
+          <td class="who" data-l="Taught by"><a href="#t-haroon">Sir Haroon</a></td>
+          <td class="mode" data-l="Mode">On campus</td>
+        </tr>
+        <tr>
+          <td class="subj">Mathematics</td>
+          <td data-l="O Level"><span class="code">4024</span></td>
+          <td data-l="IGCSE"><span class="code">0580</span></td>
+          <td data-l="A Level"><span class="none" aria-label="Not offered">&mdash;</span></td>
+          <td class="who" data-l="Taught by"><a href="#t-haroon">Sir Haroon</a>, <a href="#t-fahad">Sir Fahad Khan</a></td>
+          <td class="mode" data-l="Mode">On campus or online</td>
+        </tr>
+        <tr>
+          <td class="subj">Accounting</td>
+          <td data-l="O Level"><span class="code">7707</span></td>
+          <td data-l="IGCSE"><span class="none" aria-label="Not offered">&mdash;</span></td>
+          <td data-l="A Level"><span class="code">9706</span></td>
+          <td class="who" data-l="Taught by"><a href="#t-yasir">Sir Yasir</a></td>
+          <td class="mode" data-l="Mode">On campus or online</td>
+        </tr>
+        <tr>
+          <td class="subj">Computer Science</td>
+          <td data-l="O Level"><span class="code">2210</span></td>
+          <td data-l="IGCSE"><span class="none" aria-label="Not offered">&mdash;</span></td>
+          <td data-l="A Level"><span class="code">9618</span></td>
+          <td class="who" data-l="Taught by"><a href="#t-fahad">Sir Fahad Khan</a>, <a href="#t-haseeb">Sir Haseeb</a></td>
+          <td class="mode" data-l="Mode">Online</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="index-note">Not sure which syllabus your school follows? Send us your school name and class on WhatsApp and we'll point you to the right batch.</p>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section class="teachers" id="teachers" aria-labelledby="t-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="t-h">The teachers</h2>
+      <p>Five teachers, each with a clear subject and level. Watch them teach before you choose.</p>
+    </div>
+
+    <article class="lead-t" id="t-mubashir" aria-labelledby="n-mubashir">
+      <div class="photo"><img src="https://alt-academy-hub.lovable.app/assets/sir-mubashir-D0XZVLNy.png" alt="Muhammad Mubashir" width="480" height="600" loading="lazy"><span class="mono" aria-hidden="true">MM</span></div>
+      <div>
+        <p class="t-role">Founder</p>
+        <h3 id="n-mubashir">Muhammad Mubashir</h3>
+        <dl class="facts">
+          <dt>Subject</dt><dd>Economics</dd>
+          <dt>Levels</dt><dd>O Level and A Level</dd>
+          <dt>Teaching</dt><dd>5+ years</dd>
+        </dl>
+        <p class="bio">Founded Ignite Academy and leads its Economics programme, helping students master concepts, application and exam technique for Cambridge O and A Level Economics.</p>
+      </div>
+      <div class="vids">
+        <button class="yt" type="button" data-id="VYjrMsnTD7A" aria-label="Play: demo lecture by Muhammad Mubashir">
+          <span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path fill="currentColor" d="M0 0l10 6-10 6z"/></svg>Demo lecture</span>
+        </button>
+        <small>Also above: an Economics Paper 1 question, solved.</small>
+      </div>
+    </article>
+
+    <article class="lead-t" id="t-haroon" aria-labelledby="n-haroon">
+      <div class="photo"><img src="https://alt-academy-hub.lovable.app/assets/sir-haroon-a0jxfnaL.png" alt="Sir Haroon" width="480" height="600" loading="lazy"><span class="mono" aria-hidden="true">H</span></div>
+      <div>
+        <p class="t-role">Senior faculty</p>
+        <h3 id="n-haroon">Sir Haroon</h3>
+        <dl class="facts">
+          <dt>Subjects</dt><dd>Physics, Maths, Chemistry</dd>
+          <dt>Levels</dt><dd>O Level and IGCSE</dd>
+          <dt>Teaching</dt><dd>30 years</dd>
+          <dt>Mode</dt><dd>On campus only, Ittehad Commercial</dd>
+        </dl>
+        <p class="bio">Three decades of teaching the sciences and mathematics. His classes run in person at the DHA Phase 6 campus.</p>
+        <div class="t-links"><a href="https://www.youtube.com/@sirharoon3141" target="_blank" rel="noopener">Sir Haroon's YouTube channel</a></div>
+      </div>
+      <div class="vids three">
+        <button class="yt" type="button" data-id="bno0lhiQHiU" aria-label="Play: demo lecture 1 by Sir Haroon">
+          <span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path fill="currentColor" d="M0 0l10 6-10 6z"/></svg>Demo lecture 1</span>
+        </button>
+        <button class="yt" type="button" data-id="g6vtY8jqWjY" aria-label="Play: demo lecture 2 by Sir Haroon">
+          <span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path fill="currentColor" d="M0 0l10 6-10 6z"/></svg>Demo lecture 2</span>
+        </button>
+        <button class="yt" type="button" data-id="ukE2yM76JiA" aria-label="Play: demo lecture 3 by Sir Haroon">
+          <span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path fill="currentColor" d="M0 0l10 6-10 6z"/></svg>Demo lecture 3</span>
+        </button>
+      </div>
+    </article>
+
+    <div class="mini-row">
+      <article class="mini" id="t-yasir" aria-labelledby="n-yasir">
+        <div class="photo"><img src="https://alt-academy-hub.lovable.app/assets/sir-yasir-BdEgL_pX.png" alt="Sir Yasir" width="300" height="300" loading="lazy"><span class="mono" aria-hidden="true">Y</span></div>
+        <p class="t-role">Accounting, O and A Level</p>
+        <h3 id="n-yasir">Sir Yasir</h3>
+        <dl class="facts">
+          <dt>Teaching</dt><dd>6 years</dd>
+          <dt>Mode</dt><dd>On campus and online</dd>
+        </dl>
+        <p class="bio">Builds strong fundamentals through guided practice.</p>
+        <p class="on-request">Demo lecture on request.</p>
+      </article>
+
+      <article class="mini" id="t-fahad" aria-labelledby="n-fahad">
+        <div class="photo"><img src="https://alt-academy-hub.lovable.app/assets/sir-fahad-CRXiZqMk.png" alt="Sir Fahad Khan" width="300" height="300" loading="lazy"><span class="mono" aria-hidden="true">FK</span></div>
+        <p class="t-role">Computer Science and Maths</p>
+        <h3 id="n-fahad">Sir Fahad Khan</h3>
+        <dl class="facts">
+          <dt>Levels</dt><dd>CS: O and A Level. Maths: O Level</dd>
+          <dt>Teaching</dt><dd>5 years</dd>
+          <dt>Mode</dt><dd>Online only</dd>
+        </dl>
+        <p class="bio">A structured curriculum with regular assessments.</p>
+        <button class="yt" type="button" data-id="0sdMmnnurxY" aria-label="Play: demo lecture by Sir Fahad Khan">
+          <span class="play"><svg viewBox="0 0 10 12" aria-hidden="true"><path fill="currentColor" d="M0 0l10 6-10 6z"/></svg>Demo lecture</span>
+        </button>
+      </article>
+
+      <article class="mini" id="t-haseeb" aria-labelledby="n-haseeb">
+        <div class="photo"><img src="https://alt-academy-hub.lovable.app/assets/sir-haseeb-DMvktPDi.png" alt="Sir Haseeb" width="300" height="300" loading="lazy"><span class="mono" aria-hidden="true">H</span></div>
+        <p class="t-role">Computer Science, O Level</p>
+        <h3 id="n-haseeb">Sir Haseeb</h3>
+        <dl class="facts">
+          <dt>Teaching</dt><dd>2 years</dd>
+          <dt>Mode</dt><dd>Online only</dd>
+        </dl>
+        <p class="bio">A clear, student-friendly approach to O Level Computer Science.</p>
+        <p class="on-request">Demo lecture on request.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MODES -->
+<section id="attend" aria-labelledby="m-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="m-h">On campus or online</h2>
+      <p>Pick the room or the screen. Some teachers teach only one way, so here is exactly who is where.</p>
+    </div>
+    <div class="modes">
+      <div class="mode-col">
+        <h3>On campus</h3>
+        <p class="sub">Ittehad Commercial, Phase 6, DHA, Karachi</p>
+        <ul>
+          <li><b>Sir Haroon</b><span>Physics, Maths, Chemistry</span></li>
+          <li><b>Sir Yasir</b><span>Accounting</span></li>
+        </ul>
+      </div>
+      <div class="mode-col">
+        <h3>Live online</h3>
+        <p class="sub">Join from anywhere</p>
+        <ul>
+          <li><b>Sir Fahad Khan</b><span>Computer Science, Maths</span></li>
+          <li><b>Sir Haseeb</b><span>Computer Science</span></li>
+          <li><b>Sir Yasir</b><span>Accounting</span></li>
+        </ul>
+        <p class="ask">For Economics with Muhammad Mubashir, ask which mode your batch runs in.</p>
+      </div>
+    </div>
+    <div class="also">
+      <div><h4>Small batches</h4><p>Focused groups, so every student gets individual attention and feedback.</p></div>
+      <div><h4>Tests and reports</h4><p>Regular tests, with progress reports so you always know where you stand.</p></div>
+      <div><h4>Help between classes</h4><p>Doubt-clearing sessions outside class hours, so a stuck question doesn't wait a week.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="teachers" aria-labelledby="f-h" style="border-bottom:0">
+  <div class="wrap faq-grid">
+    <div>
+      <div class="sec-head"><h2 id="f-h">Before you message</h2></div>
+      <div class="faq">
+        <details>
+          <summary>Can I watch a class before joining?</summary>
+          <p>Yes. Every teacher has demo lectures. Several are on this page; for the rest, ask on WhatsApp and we'll send them.</p>
+        </details>
+        <details>
+          <summary>Do you teach online?</summary>
+          <p>Yes, live online. Computer Science with Sir Fahad Khan and Sir Haseeb is online only. Accounting with Sir Yasir runs both on campus and online. Sir Haroon's Physics, Maths and Chemistry classes are on campus only.</p>
+        </details>
+        <details>
+          <summary>Where is the campus?</summary>
+          <p>Ittehad Commercial, Phase 6, DHA, Karachi. Message us before you visit and we'll share the exact location.</p>
+        </details>
+        <details>
+          <summary>What are the fees?</summary>
+          <p>Send your subject, level and preferred mode on WhatsApp and we'll share the current fee for that batch.</p>
+        </details>
+      </div>
+    </div>
+    <aside class="faq-side" aria-label="Quick contact">
+      <p>Faster on WhatsApp. Tell us the subject, level and whether you want on campus or online.</p>
+      <a class="btn btn-red" href="#enquire">Write your enquiry</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section class="enquire" id="enquire" aria-labelledby="e-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="e-h">Ask about a batch</h2>
+      <p>Fill this in and it opens WhatsApp with your message ready to send.</p>
+    </div>
+    <div class="enq-grid">
+      <form class="form" id="enq" novalidate>
+        <div class="field">
+          <label for="f-name">Student's name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+          <span class="err" id="err-name" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="f-subject">Subject</label>
+          <select id="f-subject" name="subject" required>
+            <option value="">Choose a subject</option>
+            <option>Economics</option><option>Physics</option><option>Chemistry</option>
+            <option>Mathematics</option><option>Accounting</option><option>Computer Science</option>
+            <option>More than one subject</option>
+          </select>
+          <span class="err" id="err-subject" aria-live="polite"></span>
+        </div>
+        <fieldset class="field">
+          <legend>Level</legend>
+          <div class="seg">
+            <label><input type="radio" name="level" value="O Level" checked><span>O Level</span></label>
+            <label><input type="radio" name="level" value="IGCSE"><span>IGCSE</span></label>
+            <label><input type="radio" name="level" value="A Level"><span>A Level</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="field">
+          <legend>Mode</legend>
+          <div class="seg">
+            <label><input type="radio" name="mode" value="On campus" checked><span>On campus</span></label>
+            <label><input type="radio" name="mode" value="Online"><span>Online</span></label>
+            <label><input type="radio" name="mode" value="Either"><span>Either</span></label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="f-msg">Anything else <span style="font-weight:400;color:var(--ink-faint)">(optional)</span></label>
+          <textarea id="f-msg" name="msg" rows="3"></textarea>
+        </div>
+        <button class="btn btn-red" type="submit">Open in WhatsApp</button>
+        <p class="form-note">Nothing is stored on this site. Your message goes straight to Ignite Academy's WhatsApp.</p>
+      </form>
+
+      <ul class="contact-list">
+        <li><small>WhatsApp</small><a href="https://wa.me/923201719494" target="_blank" rel="noopener">+92 320 1719494</a></li>
+        <li><small>Call</small><a href="tel:+923201719494">+92 320 1719494</a></li>
+        <li><small>Email</small><a href="mailto:info@igniteacademy.pk">info@igniteacademy.pk</a></li>
+        <li><small>Campus</small><address>Ittehad Commercial, Phase 6, DHA, Karachi</address>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Ittehad+Commercial+Phase+6+DHA+Karachi" target="_blank" rel="noopener" style="font-size:var(--text-sm);font-family:var(--font-body);font-weight:400;text-decoration:underline;text-underline-offset:3px">Open in Google Maps</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span>&copy; 2026 Ignite Academy. Cambridge O Level, IGCSE and A Level, Karachi.</span>
+    <span>Site concept by <a href="https://nexlyr.solutions" target="_blank" rel="noopener">Nexlyr Solutions</a></span>
+  </div>
+</footer>
+
+<div class="dock" aria-label="Quick contact">
+  <a class="btn btn-red" href="https://wa.me/923201719494?text=Hi%20Ignite%20Academy%2C%20I%27d%20like%20to%20ask%20about%20classes." target="_blank" rel="noopener">WhatsApp</a>
+  <a class="btn btn-line" href="tel:+923201719494">Call</a>
+</div>
+
+<script>
+(function(){
+  // mobile menu
+  var t = document.querySelector('.menu-toggle'), m = document.getElementById('menu');
+  t.addEventListener('click', function(){
+    var open = m.classList.toggle('open');
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    t.textContent = open ? 'Close' : 'Menu';
+  });
+  m.addEventListener('click', function(e){
+    if (e.target.tagName === 'A' && m.classList.contains('open')) { m.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.textContent = 'Menu'; }
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && m.classList.contains('open')) { m.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.textContent = 'Menu'; t.focus(); }
+  });
+
+  // YouTube facades: thumbnail first, the player loads only on click
+  document.querySelectorAll('.yt').forEach(function(b){
+    var id = b.getAttribute('data-id');
+    b.style.backgroundImage = 'url(https://i.ytimg.com/vi/' + id + '/hqdefault.jpg)';
+    b.addEventListener('click', function(){
+      if (b.classList.contains('is-on')) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+      f.title = b.getAttribute('aria-label').replace('Play: ', '');
+      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      b.classList.add('is-on');
+      b.appendChild(f);
+    });
+  });
+
+  // teacher photo fallback to initials
+  document.querySelectorAll('.photo img').forEach(function(img){
+    function fail(){ img.parentNode.classList.add('no-img'); }
+    if (img.complete && img.naturalWidth === 0) fail();
+    img.addEventListener('error', fail);
+  });
+
+  // enquiry -> WhatsApp
+  var form = document.getElementById('enq');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = form.name.value.trim(), subject = form.subject.value, ok = true;
+    document.getElementById('err-name').textContent = '';
+    document.getElementById('err-subject').textContent = '';
+    form.name.removeAttribute('aria-invalid'); form.subject.removeAttribute('aria-invalid');
+    if (!name){ document.getElementById('err-name').textContent = "Add the student's name."; form.name.setAttribute('aria-invalid','true'); ok = false; }
+    if (!subject){ document.getElementById('err-subject').textContent = 'Choose a subject.'; form.subject.setAttribute('aria-invalid','true'); ok = false; }
+    if (!ok){ (name ? form.subject : form.name).focus(); return; }
+    var level = form.querySelector('input[name=level]:checked').value;
+    var mode = form.querySelector('input[name=mode]:checked').value;
+    var msg = form.msg.value.trim();
+    var text = 'Hi Ignite Academy,\n\nStudent: ' + name + '\nSubject: ' + subject + '\nLevel: ' + level + '\nMode: ' + mode + (msg ? '\n\n' + msg : '');
+    window.open('https://wa.me/923201719494?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+})();
+</script>
+</body>
+</html>
