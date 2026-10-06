@@ -1166,6 +1166,18 @@ html.pre-on .hero-media video{transform:scale(1.22);filter:brightness(1.22) satu
   .chat-fab{width:56px;height:56px;padding:0}
   .chat-fab .lbl{display:none}
 }
+
+/* phones: the cup lives inside each chapter's stage; the intro is text only */
+@media (max-width:900px){
+  .intro-zone{display:none!important}
+  .cups-intro{padding-block:3rem 1.4rem}
+  /* nav lines up with the page content edges and sits clear of the status bar */
+  .nav{width:calc(100% - var(--pad) * 2);top:max(12px,calc(env(safe-area-inset-top,0px) + 8px))}
+  .nav__bar{height:56px;padding:0 .4rem 0 1.05rem}
+  .nav__logo img{height:28px}
+  .nav__burger{width:44px;height:44px}
+  .sheet{right:var(--pad);top:calc(max(12px,calc(env(safe-area-inset-top,0px) + 8px)) + 56px + 10px);width:min(calc(100vw - var(--pad) * 2),400px)}
+}
 </style>
 </head>
 <body class="is-locked">
@@ -2155,7 +2167,8 @@ function initCups(){
     scene.traverse(function(o){if(!o.material)return;(Array.isArray(o.material)?o.material:[o.material]).forEach(function(m){if(m.userData.lin)return;m.userData.lin=1;if(m.color&&!m.map)m.color.convertSRGBToLinear();if(m.emissive)m.emissive.convertSRGBToLinear()})});
 
     /* layout / anchors */
-    function resize(){var w=window.innerWidth,h=window.innerHeight;gl.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+    var cvW=0,cvH=0;
+    function resize(){var w=canvas.clientWidth||window.innerWidth,h=canvas.clientHeight||window.innerHeight;if(w===cvW&&h===cvH)return;cvW=w;cvH=h;gl.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
     resize();window.addEventListener('resize',resize);
     function num(el,k,d){var v=el.getAttribute('data-'+k);return v===null?d:parseFloat(v)}
     function anchorState(){
@@ -2167,6 +2180,15 @@ function initCups(){
       for(i=0;i<list.length-1;i++){var a=list[i],b=list[i+1];if(c>=a.c&&c<=b.c){var t=(c-a.c)/Math.max(1,b.c-a.c);t=t*t*(3-2*t);
         return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,s:a.s+(b.s-a.s)*t,t:t<.5?a.t:b.t}}}
       return list[list.length-1];
+    }
+    var stages=anchors.map(function(el){var z=el.querySelector('.zone');return z?{z:z,el:el}:null}).filter(Boolean);
+    function stageState(){
+      var vh=window.innerHeight,best=null,bv=0,br=null;
+      for(var i=0;i<stages.length;i++){var z=stages[i].z;if(!z.offsetParent)continue;var r=z.getBoundingClientRect();if(r.height<10)continue;
+        var v=(Math.min(r.bottom,vh)-Math.max(r.top,0))/r.height;if(v>bv){bv=v;best=stages[i];br=r}}
+      if(!best||bv<.08)return null;
+      var f=Math.max(0,Math.min(1,(bv-.42)/.5));f=f*f*(3-2*f);
+      return {x:(br.left+br.width/2-cvW/2)/cvW,y:-(br.top+br.height*.53-cvH/2)/cvH,s:num(best.el,'ms',1)*f,t:best.el.getAttribute('data-cup'),pin:true};
     }
     var cur={x:0,y:0,s:0},first=true,active='hot',kick=0,spinExtra=0;
     /* drag */
@@ -2184,13 +2206,18 @@ function initCups(){
     function loop(){
       if(!running)return;
       var dt=Math.min(clock.getDelta(),.05),k=1-Math.exp(-dt*3.8),time=clock.elapsedTime;
-      var st=anchorState();
+      var st;
+      if(isMobile()){st=stageState()||{x:cur.x,y:cur.y,s:0,t:active,pin:true}}else{st=anchorState()}
       if(first){cur.x=st.x;cur.y=st.y;cur.s=st.s;first=false}
-      cur.x+=(st.x-cur.x)*k;cur.y+=(st.y-cur.y)*k;cur.s+=(st.s-cur.s)*k;if(st.s<.001&&cur.s<.06)cur.s=0;
-      var aspect=window.innerWidth/window.innerHeight,VW=VH*aspect;
+      if(st.pin&&st.t!==active&&cur.s>=.3)st.s=0; /* shrink first, then swap cup type */
+      if(st.pin){cur.x=st.x;cur.y=st.y;cur.s+=(st.s-cur.s)*(1-Math.exp(-dt*9))}
+      else{cur.x+=(st.x-cur.x)*k;cur.y+=(st.y-cur.y)*k;cur.s+=(st.s-cur.s)*k}
+      if(st.s<.001&&cur.s<.06)cur.s=0;
+      window.__cup=cur;
+      var aspect=cam.aspect,VW=VH*aspect;
       root.position.set(cur.x*VW,cur.y*VH,0);
       root.scale.setScalar(Math.max(cur.s,0.0001));
-      if(st.t!==active){active=st.t;kick+=Math.PI*1.2}
+      if(st.t!==active&&(!st.pin||cur.s<.3)){active=st.t;kick+=Math.PI*1.2}
       var anyVisible=0;
       Object.keys(cups).forEach(function(n){var w=cups[n],u=w.userData;var others=Object.keys(cups).filter(function(o){return o!==n}).reduce(function(a,o){return Math.max(a,cups[o].userData.vis)},0);
         var target=(n===active&&others<.2)?1:0;
