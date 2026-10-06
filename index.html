@@ -920,6 +920,129 @@ main,footer{position:relative;z-index:3}
 
 /* fix: mobile menu footer button was inheriting the big menu-link type */
 .sheet .sheet__foot .btn{display:inline-flex;align-items:center;justify-content:center;padding:0 .4rem 0 1.45rem;font-family:var(--font-body);font-weight:600;font-size:.97rem;line-height:normal;text-transform:none;transform:none;transition:transform .45s var(--ease-out),box-shadow .45s}
+
+/* ═══════════ PHONE PASS ═══════════ */
+.intro-zone{display:none}
+
+/* nav menu: compact dropdown instead of a full-screen sheet */
+@media (max-width:1080px){
+  .sheet{inset:auto;top:calc(var(--nav-h) + 14px);right:12px;left:auto;bottom:auto;width:min(calc(100vw - 24px),400px);display:block;padding:.35rem 1.15rem 1.1rem;border-radius:26px;
+    background:linear-gradient(165deg,rgba(24,50,35,.9),rgba(9,21,14,.94));border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 40px 80px -28px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.16);
+    -webkit-backdrop-filter:blur(26px) saturate(160%);backdrop-filter:blur(26px) saturate(160%);
+    max-height:calc(100svh - var(--nav-h) - 34px);overflow-y:auto;overscroll-behavior:contain;
+    transform:translateY(-12px) scale(.96);transform-origin:calc(100% - 28px) 0;transition:opacity .28s,visibility .28s,transform .42s var(--ease-out)}
+  .sheet.is-open{transform:none}
+  .sheet ul{margin:0 0 .95rem}
+  .sheet li:last-child{border-bottom:0}
+  .sheet a{font-size:1.45rem;padding:.85rem 0;align-items:center;transform:none;transition:color .25s}
+  .sheet a small{font-size:.8rem}
+  .sheet__foot{gap:.6rem}
+  .sheet__foot .status{justify-self:start}
+}
+
+@media (max-width:900px){
+  /* decoration removed on phones */
+  .ribbons,.stamp,.sticker,.msearch kbd,.rhead__mark svg,.reel__cap > span,.card__tag i,.tile__cap b{display:none!important}
+  .rhead .o{color:var(--c-sand);-webkit-text-stroke:0}
+  .rhead p{padding-right:0!important}
+
+  /* rhythm */
+  .sec{padding-block:3.4rem}
+  .head{margin-bottom:1.6rem;gap:.9rem}
+  .head h2{font-size:clamp(2.5rem,12vw,3.4rem)}
+  .rhead{margin-bottom:1.6rem}
+  .rhead h2{font-size:clamp(2.5rem,12vw,3.4rem);line-height:.9}
+
+  /* hero: only a pause button stays */
+  .reel-wrap{position:absolute;right:var(--pad);top:calc(var(--nav-h) + 16px);padding:0;gap:0;order:0;align-self:auto;z-index:3}
+  .reel-wrap .reel__cap{min-width:0;padding:0;background:none;border:0;border-radius:0;-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+  .reel-wrap .vid-btn{width:42px;height:42px;background:rgba(10,23,16,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  .facts > div{padding:.7rem 1rem}
+
+  /* cups: the cup owns the top half of the screen, the card scrolls beneath it */
+  #cupCanvas{z-index:4}
+  .cups-intro{min-height:0;display:block;padding-block:0 1.6rem}
+  .cups-intro .wrap,.chapter .wrap{display:flex;flex-direction:column}
+  .cups-intro .head{margin-bottom:0}
+  .chapter .wrap{padding-bottom:10svh}
+  .chapter{display:block;min-height:0;padding-block:0 1.6rem}
+  .intro-zone{display:block}
+  .cups-intro .zone,.chapter .zone,.chapter--right .zone,.chapter--left .zone{order:-1;position:sticky;top:0;left:auto;right:auto;height:50svh;min-height:0;margin-inline:calc(var(--pad) * -1);z-index:2;touch-action:pan-y;
+    background:radial-gradient(70% 62% at 50% 58%,rgba(62,139,91,.26),rgba(62,139,91,0) 72%),linear-gradient(180deg,rgba(9,22,15,.97),rgba(9,22,15,.97));
+    -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+    -webkit-mask-image:linear-gradient(180deg,#000 86%,transparent);mask-image:linear-gradient(180deg,#000 86%,transparent)}
+  .chapter .zone::after,.cups-intro .zone::after{content:"Swipe to spin";position:absolute;left:50%;bottom:20%;transform:translateX(-50%);padding:.34rem .8rem;border-radius:var(--r-pill);font-size:.74rem;font-weight:600;letter-spacing:.02em;color:var(--c-text-mute);background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);white-space:nowrap;transition:opacity .5s}
+  .zone.was-dragged::after{opacity:0}
+  .chapter .card,.chapter--right .card,.chapter--left .card{margin-top:0;max-width:none;z-index:1;padding:1.3rem 1.15rem 1.15rem;border-radius:24px}
+  .card h3{font-size:2.15rem;margin-bottom:.6rem}
+  .card > p{font-size:.95rem;margin-bottom:1.1rem}
+  .card__tag{margin-bottom:.6rem;color:var(--c-caramel);text-transform:uppercase;letter-spacing:.08em;font-size:.74rem}
+  .card__photo{margin-bottom:1rem}
+  .plist li{padding:.58rem 0;font-size:.95rem}
+  .flavors{gap:.4rem;margin-bottom:1.1rem}
+  .flavor{height:38px;font-size:.88rem}
+
+  /* counter deck: bigger card, less dead space */
+  .deck{height:calc(min(66vw,280px) * 1.333 + 40px)}
+  .deck__card{--w:min(66vw,280px)}
+
+  /* gallery captions readable */
+  .tile__cap{border-radius:14px;padding:.45rem .7rem;align-items:flex-start}
+  .tile__cap span{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.25}
+
+  /* reviews */
+  .rvw__media{aspect-ratio:16/10!important}
+
+  /* visit */
+  .visit__photo{min-height:260px!important}
+}
+
+@media (max-width:700px){
+  /* menu: one board per category, drinks as price rows */
+  .menu .head{margin-bottom:1.3rem}
+  .menu__tools{margin:0 0 .9rem;padding:.45rem;gap:.45rem;border-radius:22px}
+  .msearch{height:46px;flex-basis:100%}
+  .mfilters button{height:38px;padding:0 .9rem;font-size:.86rem}
+  .mrail{margin-bottom:.9rem}
+  .mcats{gap:1rem}
+  .mcat{border-radius:26px;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:linear-gradient(170deg,rgba(255,255,255,.1),rgba(255,255,255,.035) 45%,rgba(10,23,16,.35));box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 34px 60px -44px rgba(0,0,0,.95);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+  .mcat__head{height:172px;border-radius:0;margin:0;padding:1.05rem 1.15rem;border:0;box-shadow:none;align-items:flex-end}
+  .mcat__head::before{background:linear-gradient(0deg,rgba(8,19,13,.96) 0%,rgba(8,19,13,.5) 46%,rgba(8,19,13,.05) 100%)}
+  .mcat:hover .mcat__head img{transform:none}
+  .mcat__head > div{padding:0;background:none;border:0;border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .mcat__head h3{font-size:2.35rem}
+  .mcat__head p{font-size:.86rem;margin-top:.3rem}
+  .mcat__badge{display:inline-flex;position:absolute;top:.8rem;right:.8rem;padding:.3rem .7rem;font-size:.72rem}
+  .mgrid{display:block;padding:.15rem 1.15rem .55rem}
+  .mitem{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:.9rem;row-gap:.12rem;padding:.8rem 0;margin:0;border:0;border-top:1px solid rgba(255,255,255,.09);border-radius:0;background:none;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;overflow:visible;transform:none!important}
+  .mitem:first-child{border-top:0}
+  .mitem::before,.mitem::after{display:none}
+  .mitem__top{grid-column:1;justify-content:flex-start;align-items:center;gap:.5rem}
+  .mitem h4{font-size:1.03rem}
+  .mitem__meta{grid-column:1;gap:0}
+  .mitem__meta span{padding:0;border:0;background:none;font-size:.78rem;font-weight:500;color:var(--c-text-faint)}
+  .mitem__meta span + span::before{content:"·";margin:0 .45em}
+  .mitem__bot{grid-column:2;grid-row:1 / span 2;border:0;padding:0;margin:0;align-self:center}
+  .mitem__ico{display:none}
+  .mitem__price{font-size:1.45rem}
+  .mitem .new{font-size:.66rem;padding:.12rem .45rem}
+  .mitem.is-sig{margin:.4rem -.65rem;padding:.8rem .65rem;border:1px solid rgba(242,201,141,.4);border-radius:16px;background:linear-gradient(150deg,rgba(201,138,69,.3),rgba(201,138,69,.08))}
+  .mitem.is-sig + .mitem{border-top:0}
+  .mitem.is-sig .sig-tag{grid-column:1 / -1;margin:0 0 .3rem}
+  .mitem.is-sig .mitem__bot{grid-row:2 / span 2}
+  .menu__fine{margin-top:1.1rem;font-size:.8rem}
+
+  /* booking form fits */
+  .frow--3{grid-template-columns:repeat(2,minmax(0,1fr));max-height:260px}
+  .frow--3 .fld--step{grid-column:1 / -1}
+  .fld input[type="date"],.fld input[type="time"]{min-width:0;font-size:.92rem}
+
+  /* chat: floating panel, not full screen */
+  .chat{left:auto;right:12px;bottom:max(12px,env(safe-area-inset-bottom));width:min(calc(100vw - 24px),380px);height:min(66svh,520px);border-radius:26px;background:linear-gradient(170deg,rgba(24,50,35,.97),rgba(9,21,14,.98));box-shadow:0 40px 80px -28px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.16);transform-origin:calc(100% - 30px) 100%}
+  .chat-fab{width:54px;height:54px}
+}
+@media (max-width:360px){.mgrid{grid-template-columns:none}}
 </style>
 </head>
 <body class="is-locked">
@@ -1060,16 +1183,17 @@ main,footer{position:relative;z-index:3}
 </div>
 
 <!-- CUPS -->
-<section class="sec cups-intro" id="cups" data-cup="hot" data-x=".27" data-y="-.04" data-s=".95" data-mx="0" data-my=".24" data-ms=".58">
+<section class="sec cups-intro" id="cups" data-cup="hot" data-x=".27" data-y="-.04" data-s=".95" data-mx="0" data-my=".24" data-ms=".72">
   <div class="wrap">
+    <div class="zone spin-zone intro-zone" data-spin aria-hidden="true"></div>
     <div class="head rv">
       <h2>Pick your <span class="script">cup</span></h2>
-      <p>Everything at Grub leaves the bar in one of three cups. Keep scrolling and each one turns for you. Grab it and drag if you want a closer look.</p>
+      <p>Everything at Grub leaves the bar in one of three cups. Keep scrolling and each one turns for you. <span class="hint-desk">Grab it and drag</span><span class="hint-mob">Swipe the cup sideways</span> if you want a closer look.</p>
     </div>
   </div>
 </section>
 
-<section class="chapter chapter--left" id="ch-hot" data-cup="hot" data-x=".23" data-y="-.03" data-s="1.12" data-mx="0" data-my=".24" data-ms=".8" aria-labelledby="ch1">
+<section class="chapter chapter--left" id="ch-hot" data-cup="hot" data-x=".23" data-y="-.03" data-s="1.12" data-mx="0" data-my=".24" data-ms=".72" aria-labelledby="ch1">
   <div class="wrap">
     <div class="zone spin-zone" data-spin aria-hidden="true"></div>
     <article class="card glass rv">
@@ -1088,7 +1212,7 @@ main,footer{position:relative;z-index:3}
   </div>
 </section>
 
-<section class="chapter chapter--right" id="ch-iced" data-cup="iced" data-x="-.23" data-y="-.05" data-s="1.0" data-mx="0" data-my=".19" data-ms=".66" aria-labelledby="ch2">
+<section class="chapter chapter--right" id="ch-iced" data-cup="iced" data-x="-.23" data-y="-.05" data-s="1.0" data-mx="0" data-my=".2" data-ms=".56" aria-labelledby="ch2">
   <div class="wrap">
     <article class="card glass rv">
       <span class="card__tag"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="5" y="5" width="6" height="6" rx="1.5"/><rect x="13" y="11" width="6" height="6" rx="1.5"/></svg></i>Iced tea &amp; coolers</span>
@@ -1112,7 +1236,7 @@ main,footer{position:relative;z-index:3}
   </div>
 </section>
 
-<section class="chapter chapter--left" id="ch-cold" data-cup="cold" data-x=".23" data-y="-.05" data-s="1.04" data-mx="0" data-my=".24" data-ms=".76" aria-labelledby="ch3">
+<section class="chapter chapter--left" id="ch-cold" data-cup="cold" data-x=".23" data-y="-.05" data-s="1.04" data-mx="0" data-my=".24" data-ms=".68" aria-labelledby="ch3">
   <div class="wrap">
     <div class="zone spin-zone" data-spin aria-hidden="true"></div>
     <article class="card glass rv">
@@ -1488,7 +1612,8 @@ $$('.btn').forEach(function(b){
 
 /* ───── nav ───── */
 var nav=$('#nav'),burger=$('#burger'),sheet=$('#sheet');
-function setSheet(open){nav.classList.toggle('is-open',open);sheet.classList.toggle('is-open',open);burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');sheet.setAttribute('aria-hidden',!open);document.body.classList.toggle('is-locked',open)}
+function setSheet(open){nav.classList.toggle('is-open',open);sheet.classList.toggle('is-open',open);burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');sheet.setAttribute('aria-hidden',!open)}
+document.addEventListener('pointerdown',function(e){if(sheet.classList.contains('is-open')&&!sheet.contains(e.target)&&!nav.contains(e.target))setSheet(false)});
 burger.addEventListener('click',function(){setSheet(!sheet.classList.contains('is-open'))});
 $$('a',sheet).forEach(function(a){a.addEventListener('click',function(){setSheet(false)})});
 var navProg=$('#navProg'),navLinks=$$('.nav__links a');
@@ -1965,7 +2090,8 @@ function initCups(){
     function anchorState(){
       var vh=window.innerHeight,c=vh/2,m=isMobile(),list=[];
       for(var i=0;i<anchors.length;i++){var el=anchors[i],r=el.getBoundingClientRect();
-        list.push({c:r.top+Math.min(r.height,vh)/2,x:num(el,m?'mx':'x',0),y:num(el,m?'my':'y',0),s:num(el,m?'ms':'s',1),t:el.getAttribute('data-cup')})}
+        list.push({top:r.top,c:r.top+Math.min(r.height,vh)/2,x:num(el,m?'mx':'x',0),y:num(el,m?'my':'y',0),s:num(el,m?'ms':'s',1),t:el.getAttribute('data-cup')})}
+      if(m){var pk=list[0];for(i=0;i<list.length;i++){if(list[i].top<=vh*(list[i].s===0?.56:.22))pk=list[i]}return pk}
       if(c<=list[0].c)return list[0];
       for(i=0;i<list.length-1;i++){var a=list[i],b=list[i+1];if(c>=a.c&&c<=b.c){var t=(c-a.c)/Math.max(1,b.c-a.c);t=t*t*(3-2*t);
         return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t,s:a.s+(b.s-a.s)*t,t:t<.5?a.t:b.t}}}
@@ -1977,7 +2103,7 @@ function initCups(){
     $$('[data-spin]').forEach(function(z){
       z.addEventListener('pointerdown',function(e){drag.on=true;drag.x=e.clientX;drag.y=e.clientY;drag.lock=e.pointerType==='mouse'?'x':null;drag.v=0;z.classList.add('was-dragged');if(e.pointerType==='mouse')z.setPointerCapture(e.pointerId)});
       z.addEventListener('pointermove',function(e){if(!drag.on)return;var dx=e.clientX-drag.x,dy=e.clientY-drag.y;
-        if(drag.lock===null){if(Math.abs(dx)>6||Math.abs(dy)>6)drag.lock=Math.abs(dx)>Math.abs(dy)?'x':'y'}
+        if(drag.lock===null){if(Math.abs(dx)>6||Math.abs(dy)>6)drag.lock=Math.abs(dx)>Math.abs(dy)*.8?'x':'y'}
         if(drag.lock==='x'){drag.off+=dx*.012;drag.v=dx*.012;drag.x=e.clientX;drag.y=e.clientY}});
       ['pointerup','pointercancel','pointerleave'].forEach(function(ev){z.addEventListener(ev,function(){drag.on=false})});
     });
