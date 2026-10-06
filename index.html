@@ -1131,6 +1131,13 @@ html.pre-on .hero-media video{transform:scale(1.22);filter:brightness(1.22) satu
   .steps h3{font-size:1.7rem;margin:0}
 }
 
+/* thinner ribbons */
+.ribbons{height:clamp(84px,8vw,118px)}
+.ribbon{padding:clamp(.32rem,.55vw,.48rem) 0}
+.ribbon--a{transform:translateY(-82%) rotate(-1.3deg)}
+.ribbon--b{transform:translateY(-18%) rotate(1.1deg)}
+.ribbon__item{font-size:clamp(.85rem,1.35vw,1.15rem);letter-spacing:.06em;gap:clamp(.8rem,1.6vw,1.4rem);padding-right:clamp(.8rem,1.6vw,1.4rem)}
+
 /* ═══════════ chat: readable panel, quiet scrollbar, clearer launcher ═══════════ */
 .chat{background:linear-gradient(165deg,rgba(28,58,41,.93),rgba(10,24,16,.95));border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(26px) saturate(150%);backdrop-filter:blur(26px) saturate(150%);border-radius:28px}
 .chat::before,.chat::after{opacity:.45}
